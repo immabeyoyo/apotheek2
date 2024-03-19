@@ -1,28 +1,26 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once "dbh.inc.php";
 
 $message = '';
 
 try {
-    require_once "dbh.inc.php";
     if (isset($_POST["login"])) {
-        if (empty($_POST["username"]) || empty($_POST["password"])) {
+        if (empty($_POST["username"]) || empty($_POST["pwd"])) {
             $message = '<label>All fields are required</label>';
         } else {
             $username = $_POST["username"];
-            $password = $_POST["password"];
+            $password = $_POST["pwd"];
 
             $query = "SELECT * FROM gebruiker WHERE username = :username;";
-            $statement = $connect->prepare($query);
+            $statement = $pdo->prepare($query); 
             $statement->execute(array(':username' => $username));
             $count = $statement->rowCount();
             if ($count > 0) {
                 $row = $statement->fetch(PDO::FETCH_ASSOC);
                 if (password_verify($password, $row['pwd'])) {
                     $_SESSION["username"] = $username;
-                    header("location: ../Voorlichting/voorlichting.html");
+                    header("location: inloggen.html");
                     exit();
                 } else {
                     $message = '<label>Wrong Password</label>';
@@ -35,4 +33,3 @@ try {
 } catch (PDOException $error) {
     $message = $error->getMessage();
 }
-?>
