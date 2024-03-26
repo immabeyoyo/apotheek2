@@ -4,6 +4,7 @@ require_once "dbh.inc.php";
 
 $message = '';
 
+/*
 try {
     if (isset($_POST["login"])) {
         if (empty($_POST["username"]) || empty($_POST["pwd"])) {
@@ -33,3 +34,22 @@ try {
 } catch (PDOException $error) {
     $message = $error->getMessage();
 }
+
+*/
+
+    if (empty($_POST["username"]) || empty($_POST["password"])) {
+    $message = '<label>Vul alle velden in.</label>';
+    } else {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // De query die we willen uitvoeren
+    $sql = "INSERT INTO $table(email, password) VALUES ('$email', '$password')";
+    // Voer de query uit in de database.
+    if ($conn->query($sql)=== TRUE) {
+        echo "Nieuw record succesvol toegevoegd aan table $table";
+    } else {
+        echo "Fout bij het toevoegen van nieuw record: " .$conn->error;
+    }
+}
+
