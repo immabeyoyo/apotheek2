@@ -15,7 +15,7 @@ if (empty($_POST["username"]) || empty($_POST["password"]) || empty($_POST["emai
 
     // Voert de statement uit
     if ($stmt->execute()) {
-      header("Location: ../Voorlichting/voorlichting.html");
+      header("Location: ../Aangemeld/aangemeld.html");
       die();
     } else {
         echo "Fout bij het toevoegen van nieuw record: " . $stmt->error;
