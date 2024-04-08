@@ -2,54 +2,42 @@
 session_start();
 require_once "dbh.inc.php";
 
-$message = '';
+// Controleer of de gebruiker al is ingelogd, zo ja, stuur deze dan door naar de welkomstpagina
+// if (isset($_SESSION['email'])) {
+//   header("Location:../MijnAPO/mijnApo.html");
+//   exit;
+// }
 
-/*
-try {
-    if (isset($_POST["login"])) {
-        if (empty($_POST["username"]) || empty($_POST["pwd"])) {
-            $message = '<label>All fields are required</label>';
-        } else {
-            $username = $_POST["username"];
-            $password = $_POST["pwd"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (!empty($_POST['email']) && !empty($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-            $query = "SELECT * FROM gebruiker WHERE username = :username;";
-            $statement = $pdo->prepare($query); 
-            $statement->execute(array(':username' => $username));
-            $count = $statement->rowCount();
-            if ($count > 0) {
-                $row = $statement->fetch(PDO::FETCH_ASSOC);
-                if (password_verify($password, $row['pwd'])) {
-                    $_SESSION["username"] = $username;
-                    header("location: inloggen.html");
-                    exit();
-                } else {
-                    $message = '<label>Wrong Password</label>';
-                }
-            } else {
-                $message = '<label>Username not found</label>';
-            }
-        }
+    // Prepared statement voor inloggen.
+    $stmt = $conn->prepare("SELECT email, pwd FROM gebruiker WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if($stmt->num_rows == 1) {
+      $stmt->bind_result($db_email, $db_password);
+      $stmt->fetch();
+
+      // Controleer of het ingevoerde wachtwoord overeenkomt met het gehaste wachtwoord.
+      if (password_verify($password, $db_password)) {
+        // Inloggen succesvol, start sessie en sla gebruikersgegevens op in $_SESSION.
+        $_SESSION['email'] = $email;
+        // Stuur door naar de welkomstpagina
+        header("Location: ../MijnAPO/mijnApo.html");
+        echo "Succesvol ingelogd";
+        exit;
+      } else {
+        echo ("<p>Ongeldig email of wachtwoord. Probeer het opnieuw</p>");
+      }
     }
-} catch (PDOException $error) {
-    $message = $error->getMessage();
+  } else {
+    echo ("<p>Vul naam en wachtwoord in.</p>");
+  }
 }
 
-*/
-
-if (empty($_POST["username"]) || empty($_POST["password"])) {
-$message = '<label>Vul alle velden in.</label>';
-} else {
-$username = $_POST['username'];
-$password = $_POST['password'];
-
-// De query die we willen uitvoeren
-$sql = "INSERT INTO $table(email, password) VALUES ('$email', '$password')";
-// Voer de query uit in de database.
-if ($conn->query($sql)=== TRUE) {
-    echo "Nieuw record succesvol toegevoegd aan table $table";
-} else {
-    echo "Fout bij het toevoegen van nieuw record: " .$conn->error;
-}
-}
-
+?>
