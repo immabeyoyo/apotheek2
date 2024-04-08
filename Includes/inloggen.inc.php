@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Inloggen succesvol, start sessie en sla gebruikersgegevens op in $_SESSION.
         $_SESSION['email'] = $email;
         // Stuur door naar de welkomstpagina
-        header("Location: ../MijnAPO/mijnApo.html");
+        header("Location: ../MijnAPO/mijnApo.php");
         echo "Succesvol ingelogd";
         exit;
       } else {
@@ -39,5 +39,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo ("<p>Vul naam en wachtwoord in.</p>");
   }
 }
-
 ?>

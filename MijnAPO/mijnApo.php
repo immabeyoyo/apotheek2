@@ -34,7 +34,7 @@
         <div class="separator"></div>
   
         <div class="right-buttons">
-            <a href="../MijnAPO/mijnApo.html" class="login-button">Mijn APO</a>
+            <a href="../MijnAPO/mijnApo.php" class="login-button">Mijn APO</a>
             <a href="../Inschrijven/inschrijven.html" class="signup-button">Aanmelden</a>
         </div>
       </nav>
@@ -42,5 +42,10 @@
     <div class="mijnApo">
       Welkom op mijn APO!
     </div>
+
+    <?php
+    session_start();
+    ?>
+
   </body>
 </html>

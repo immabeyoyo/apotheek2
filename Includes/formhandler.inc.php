@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
       // Voer de query uit
       if ($stmt->execute()) {
-        echo "<p>Registratie succesvol!</p>";
         header ("Location: ../Aangemeld/aangemeld.html");
           } else {
             echo "Error: " . $sql . "<br>" . $conn_error;
