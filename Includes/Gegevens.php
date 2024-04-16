@@ -80,7 +80,6 @@
           echo "Failed to update values.";
       }
     } 
-
     ?>
 
   </body>
