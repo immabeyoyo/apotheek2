@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="mijnApo.css">
     <title>Apotheek</title>
     <link rel="icon" type="image/x-icon" href="Logo.png">
-    <script type="module" src="mijnApo.js"></script>
   </head>
   <body>
     <header>
@@ -56,9 +55,11 @@
 
     $email = $_SESSION['email'];
     $woonplaats = $_SESSION['woonplaats'];
+    $telnmr = $_SESSION['telnmr'];
 
     echo "Welkom $email<br>";
-    echo "Woonplaats:  $woonplaats";
+    echo "Woonplaats:  $woonplaats<br>";
+    echo "Telefoonnumer: $telnmr";
 
     ?>
 

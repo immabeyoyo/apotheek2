@@ -14,20 +14,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Prepared statement voor inloggen.
-    $stmt = $conn->prepare("SELECT email, pwd, woonplaats FROM gebruiker WHERE email = ?");
-    $stmt->bind_param("s", $email);
+    $stmt = $conn->prepare("SELECT email, pwd, woonplaats, telnmr FROM gebruiker WHERE email = ?");
+    $stmt->bind_param("s", $email);    
     $stmt->execute();
     $stmt->store_result();
 
     if($stmt->num_rows == 1) {
-      $stmt->bind_result($db_email, $db_password, $db_woonplaats);
+      $stmt->bind_result($db_email, $db_password, $db_woonplaats, $db_telnmr);
       $stmt->fetch();
 
       // Controleer of het ingevoerde wachtwoord overeenkomt met het gehaste wachtwoord.
       if (password_verify($password, $db_password)) {
         // Inloggen succesvol, start sessie en sla gebruikersgegevens op in $_SESSION.
         $_SESSION['email'] = $email;
-        $_SESSION['woonplaats'] = $woonplaats;
+        $_SESSION['woonplaats'] = $db_woonplaats;
+        $_SESSION['telnmr'] = $db_telnmr;
         // Stuur door naar de welkomstpagina
         header("Location: ../MijnAPO/mijnApo.php");
         echo "Succesvol ingelogd";
