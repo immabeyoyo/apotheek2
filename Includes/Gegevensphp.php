@@ -9,8 +9,8 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // New values for woonplaats and telnmr
-      $new_woonplaats = $_SESSION['woonplaats'];
-      $new_telnmr = $_SESSION['telnmr'];
+      $new_woonplaats = $_POST['woonplaats'];
+      $new_telnmr = $_POST['telnmr'];
       $user_email = $_SESSION['email'];
 
       // Prepared statement for updating woonplaats and telnmr
