@@ -40,7 +40,7 @@
     </header>
     <div class="mijnApo">
       Welkom op mijn APO!
-      <form action="../Includes/Gegevens.php" method="post">
+      <form action="../Includes/Gegevensphp.php" method="post">
       <h2>Pas hier je gegevens aan.</h2>
       <input type="text" name="woonplaats" placeholder ="Woonplaats...">
       <input type="text" name="telnmr" placeholder ="Telefoonnummer...">
@@ -62,24 +62,6 @@
       header("Location:../Inloggen/inloggen.html");
       exit;
     }
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      // New values for woonplaats and telnmr
-      $new_woonplaats = "New Woonplaats";
-      $new_telnmr = "New Telephone Number";
-      $user_email = "user@example.com";
-
-      // Prepared statement for updating woonplaats and telnmr
-      $stmt = $conn->prepare("UPDATE gebruiker SET woonplaats = ?, telnmr = ? WHERE email = ?");
-      $stmt->bind_param("sss", $new_woonplaats, $new_telnmr, $user_email);
-      $stmt->execute();
-
-      if ($stmt->affected_rows > 0) {
-          echo "Values updated successfully.";
-      } else {
-          echo "Failed to update values.";
-      }
-    } 
     ?>
 
   </body>
