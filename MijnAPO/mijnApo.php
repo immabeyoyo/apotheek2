@@ -49,12 +49,16 @@
     <?php
     session_start();
     // Checkt of de gebruiker wel ingelogd is. Anders wordt hij doorgestuurd naar inloggen.html
-
     if (!isset($_SESSION['email'])) {
       header("Location:../Inloggen/inloggen.html");
       exit;
     }
 
+    $email = $_SESSION['email'];
+    $woonplaats = $_SESSION['woonplaats'];
+
+    echo "Welkom $email<br>";
+    echo "Woonplaats:  $woonplaats";
 
     ?>
 
