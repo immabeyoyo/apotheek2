@@ -39,10 +39,9 @@
       </nav>
     </header>
     <div class="mijnApo">
-      Welkom op mijn APO!
       <form action="../Includes/Gegevensphp.php" method="post">
       <h2>Pas hier je gegevens aan.</h2>
-      <input type="text" name="woonplaats" placeholder ="Woonplaats...">
+      <input type="text" name="woonplaats" placeholder ="Woonplaats..."><br>
       <input type="text" name="telnmr" placeholder ="Telefoonnummer...">
       <button type="submit">Aanpassen</button>
     </form>

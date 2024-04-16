@@ -19,7 +19,7 @@
       $stmt->execute();
 
       if ($stmt->affected_rows > 0) {
-          echo "Values updated successfully.";
+          echo "Gegevens aangepast!";
       } else {
           echo "Failed to update values.";
       }

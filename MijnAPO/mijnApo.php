@@ -39,16 +39,8 @@
       </nav>
     </header>
     <div class="mijnApo">
-      Welkom op mijn APO!
-    </div>
-
-    <form action="../Includes/Logout.php" method="post">
-    <button type="submit">Logout</button>
-    </form>
-    <form action="../Includes/Gegevens.php" method="post">
-    <button type="submit">Pas gegevens aan</button>
-
-    <?php
+      Mijn gegevens: <br>
+      <?php
     session_start();
     // Checkt of de gebruiker wel ingelogd is. Anders wordt hij doorgestuurd naar inloggen.html
     if (!isset($_SESSION['email'])) {
@@ -60,11 +52,22 @@
     $woonplaats = $_SESSION['woonplaats'];
     $telnmr = $_SESSION['telnmr'];
 
-    echo "Welkom $email<br>";
+    echo "Email: $email<br>";
     echo "Woonplaats:  $woonplaats<br>";
     echo "Telefoonnumer: $telnmr";
 
     ?>
+      <form action="../Includes/Gegevens.php" method="post">
+      <button type="submit">Pas gegevens aan</button>
+      </form>
+    </div>
+
+    <form action="../Includes/Logout.php" method="post">
+    <button type="submit">Logout</button>
+    </form>
+
+
+
 
   </body>
 </html>
