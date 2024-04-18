@@ -1,8 +1,4 @@
-body {
-    font-family: Arial, sans-serif; /* Lettertype toegevoegd */
-    margin: 0; /* Verwijder de 8px marge */
-    padding: 0;
-}
+
 
 nav {
     overflow: hidden;
@@ -98,80 +94,439 @@ nav a:hover {
     color: black;
 }
 
-.slideshow {
-    list-style-type: none;
+
+body{
+    margin: 0;
+    padding: 0;
+
+
   }
   
-  /** SLIDESHOW **/
-  .slideshow,
-  .slideshow:after { 
-      top: 10%; /*Not sure why I needed this fix*/
-      position: fixed;
-      width: 100%;
-      height: 40%;
-      left: 0px;
-      z-index: 0; 
+  .slider{
+    width: 100%;
+    height: 500px;
+  
+    overflow: hidden;
   }
   
-  .slideshow li span { 
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0px;
-      left: 0px;
-      color: transparent;
-      background-size: cover;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      opacity: 0;
-      z-index: 0;
-      animation: imageAnimation 30s linear infinite 0s; 
+  .slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+  }
+  
+  .slides input{
+    display: none;
+  }
+  
+  .slide{
+    width: 20%;
+    transition: 2s;
+  }
+  
+  .slide img{
+    width: 100%;
+    height: 500px;
+  }
+  
+  /*css for manual slide navigation*/
+  
+  .navigation-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  
+  .manual-btn:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  .manual-btn:hover{
+    background: #000000;
+  }
+  
+  #radio1:checked ~ .first{
+    margin-left: 0;
+  }
+  
+  #radio2:checked ~ .first{
+    margin-left: -20%;
+  }
+  
+  #radio3:checked ~ .first{
+    margin-left: -40%;
+  }
+  
+  #radio4:checked ~ .first{
+    margin-left: -60%;
+  }
+  
+  /*css for automatic navigation*/
+  
+  .navigation-auto{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 460px;
+  }
+  
+
+  
+  .navigation-auto div:not(:last-child){
+    margin-right: 40px;
+  }
+  
+  #radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #000000;
+  }
+  
+  #radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #000000;
+  }
+  
+  #radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #000000;
+  }
+  
+  #radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #000000;
+  }
+
+
+
+
+  .news-slides {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .news-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  
+    height: 0%;
+    margin-bottom: 5%;
+    
   }
   
   
+  .news-slide {
+    background-color: #051b38b2;
+    color: #fffdfd;
+    padding: 3%;
+    font-family: Arial, sans-serif;
+    margin: 3%;
+    height: 40%;
+    width: 120%;
+    margin-bottom: 6%;
+  }
   
-  .slideshow li:nth-child(1) span { 
-    background-image: ;
-    animation-delay: 6s; 
+  .news-slide2 {
+    background-color: #051b38b2;
+    color: #fffdfd;
+    padding: 3%;
+    width: 80%;
+    height: 100%;
+    margin: 3%;
+    font-family: Arial, sans-serif;
+  }
+
+
+  .news-slide3{
+    background-color: #051b38b2;
+    color: #fffdfd;
+    padding: 3%;
+    width: 40%;
+    height: 100%;
+    margin: 3%;
+    font-family: Arial, sans-serif;
+    margin-top: 3%;
+
+  }
+
+
+  .images-aside {
+    width: calc(50% - 6%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Zorgt ervoor dat de elementen gelijkmatig verdeeld zijn */
+    margin-top: 5%;
+    margin-right: 3%;
+    height: max-content;
+  }
+  
+  .news-content {
+    flex: 0 0 30%; /* Breedte van elk element, met 3% marge aan beide zijden */
+    flex-direction: column;
+    justify-content: center; /* Hiermee wordt de inhoud verticaal gecentreerd */
+  
+  }
+  
+  .news-image {
+    margin: 0 3%;
+    text-align: center; /* Hiermee wordt de inhoud horizontaal gecentreerd */
+    background-color: #ebebebb2;
+    padding: 3%;
+  }
+
+  
+  .navigation-auto {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+
+  .bottom-image {
+    margin-top: auto; /* Zorgt ervoor dat deze div zich boven de ruimte van andere inhoud plaatst */
+    justify-content: center;
+    float: right;
+    margin-bottom: 20%;
+  }
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stijl voor het laden van de nieuwsdiavoorstelling */
+.news-slider.loading {
+  display: none; /* Verberg de diavoorstelling tijdens het laden */
 }
 
-  .slideshow li:nth-child(2) span { 
-      background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9ecd82b40364fc97f4b_bridge.jpg");
-      animation-delay: 6s; 
-  }
-  .slideshow li:nth-child(3) span { 
-      background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg");
-      animation-delay: 12s; 
-  }
-  .slideshow li:nth-child(4) span { 
-      background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5bfa14d04ae3429879830ee4_home-hero.jpg");   
-      animation-delay: 18s; 
-  }
-  .slideshow li:nth-child(5) span { 
-      background-image: url("https://uploads-ssl.webflow.com/5976a3655fcd654cb3d604ca/5c00c9963ea913260bb41b0e_powerlines.jpg");
-      animation-delay: 24s; 
+
+
+  .footer {
+    background-color: #252525;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: #fffdfd;
+    font-family: Arial, sans-serif;
+    padding-right: 200px;
+}
+
+.contact {
+    width: 20%;
+
+}
+
+/* Styles for the menu */
+.menu {
+  font-family: Arial, sans-serif; /* Choose a suitable font */
+  background-color: #252525; /* Background color */
+  padding: 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
+  padding: 14px 16px;
+}
+
+.menu h2 {
+  color: white; /* Heading color */
+  margin-bottom: -2%;
+}
+
+.menu ul {
+  list-style-type: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+}
+
+.menu li {
+  margin-bottom: 5px; /* Space between menu items */
+}
+
+.menu a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Link color */
+  transition: color 0.3s, background-color 0.3s, padding 0.3s; /* Smooth color transition on hover */
+  display: inline-block; /* Ensure padding affects the entire link area */
+}
+
+.menu a:hover {
+  color: white; /* Change text color on hover */
+  background-color: #302f2f; /* Change background color on hover to light gray */
+  padding: 12px 14px; /* Adjust padding on hover */
+}
+
+
+
+
+
+
+.address {
+    line-height: 1.5;
+}
+
+
+
+
+
+/* Voeg hier eventueel verdere stijlen toe voor de rest van je pagina */
+.contact address {
+    line-height: 2; /* Voeg hier de gewenste waarde toe voor de gewenste tussenregel */
+}
+
+
+/* Voeg hier eventueel verdere stijlen toe voor de rest van je pagina */
+/* Stijl voor de zoekbalk */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #252525;
+    border-radius: 0px; /* Ronde hoeken */
+    padding: 0px;
+    max-width: 400px; /* Aangepaste maximale breedte van de zoekbalk */
+    margin: 0 auto; /* Center de zoekbalk op de pagina */
   }
   
-  
-  
-  @keyframes imageAnimation { 
-      0% { opacity: 0; animation-timing-function: ease-in; }
-      8% { opacity: 1; animation-timing-function: ease-out; }
-      17% { opacity: 1 }
-      25% { opacity: 0 }
-      100% { opacity: 0 }
+  /* Stijl voor het zoekveld (input) */
+  #search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 25px; /* Ronde hoeken voor het zoekveld */
   }
   
-  
-  @keyframes titleAnimation { 
-      0% { opacity: 0 }
-      8% { opacity: 1 }
-      17% { opacity: 1 }
-      19% { opacity: 0 }
-      100% { opacity: 0 }
+  /* Stijl voor de knop */
+  .search-bar button {
+    background-color: #007bff; /* Kleur van de knop */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Ronde hoeken voor de knop */
+    padding: 5px 15px;
+    cursor: pointer;
   }
   
-  
-  .no-cssanimations .cb-slideshow li span {
-    opacity: 1;
+  /* Stijl voor de knop bij hover */
+  .search-bar button:hover {
+    background-color: #0056b3; /* Kleur bij hover */
   }
+  .search-bar-container {
+    max-width: 300px; /* Pas de maximale breedte aan zoals gewenst */
+    max-height: 100;
+    margin: 0 auto; /* Center de container op de pagina */
+    background-color: #252525;
+  }
+  .newsletter-container {
+    background-color: #252525; /* Verander dit naar de gewenste achtergrondkleur, bijvoorbeeld donkergrijs (#252525) */
+    color: white; /* Tekstkleur */
+    padding: 0px; /* Voeg wat ruimte toe rondom de container */
+  }
+
+  .contact-address {
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-address img {
+    margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-address span {
+    white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+    margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-address span:last-child {
+    margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+    display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
+
+.contact-phone {
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-phone img {
+    margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-phone span {
+    white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+    margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-phone span:last-child {
+    margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+    display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
+
+.contact-email {
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-email img {
+    margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-email span {
+    white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+    margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-email span:last-child {
+    margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+    display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
+
+.contact-hours {
+    display: flex;
+    align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-hours img {
+    margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-hours span {
+    white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+    margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-hours span:last-child {
+    margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+    display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
