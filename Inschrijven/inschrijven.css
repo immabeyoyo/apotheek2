@@ -131,3 +131,198 @@ nav a:hover {
 .signup-container button:hover {
   background-color: #1377c5;
 }
+
+
+.footer {
+  background-color: #252525;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fffdfd;
+  font-family: Arial, sans-serif;
+  padding-right: 200px;
+}
+
+.contact {
+  width: 20%;
+
+}
+
+/* Styles for the menu */
+.menu {
+font-family: Arial, sans-serif; /* Choose a suitable font */
+background-color: #252525; /* Background color */
+padding: 10px; /* Add some padding */
+border-radius: 5px; /* Rounded corners */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Drop shadow */
+padding: 14px 16px;
+}
+
+.menu h2 {
+color: white; /* Heading color */
+margin-bottom: -2%;
+}
+
+.menu ul {
+list-style-type: none; /* Remove default bullet points */
+padding: 0; /* Remove default padding */
+}
+
+.menu li {
+margin-bottom: 5px; /* Space between menu items */
+}
+
+.menu a {
+text-decoration: none; /* Remove underline */
+color: white; /* Link color */
+transition: color 0.3s, background-color 0.3s, padding 0.3s; /* Smooth color transition on hover */
+display: inline-block; /* Ensure padding affects the entire link area */
+}
+
+.menu a:hover {
+color: white; /* Change text color on hover */
+background-color: #302f2f; /* Change background color on hover to light gray */
+padding: 12px 14px; /* Adjust padding on hover */
+}
+
+
+
+
+
+
+.address {
+  line-height: 1.5;
+}
+
+
+
+
+
+/* Voeg hier eventueel verdere stijlen toe voor de rest van je pagina */
+.contact address {
+  line-height: 2; /* Voeg hier de gewenste waarde toe voor de gewenste tussenregel */
+}
+
+
+/* Voeg hier eventueel verdere stijlen toe voor de rest van je pagina */
+/* Stijl voor de zoekbalk */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #252525;
+  border-radius: 0px; /* Ronde hoeken */
+  padding: 0px;
+  max-width: 400px; /* Aangepaste maximale breedte van de zoekbalk */
+  margin: 0 auto; /* Center de zoekbalk op de pagina */
+}
+
+/* Stijl voor het zoekveld (input) */
+#search-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 25px; /* Ronde hoeken voor het zoekveld */
+}
+
+/* Stijl voor de knop */
+.search-bar button {
+  background-color: #007bff; /* Kleur van de knop */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Ronde hoeken voor de knop */
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+/* Stijl voor de knop bij hover */
+.search-bar button:hover {
+  background-color: #0056b3; /* Kleur bij hover */
+}
+.search-bar-container {
+  max-width: 300px; /* Pas de maximale breedte aan zoals gewenst */
+  max-height: 100;
+  margin: 0 auto; /* Center de container op de pagina */
+  background-color: #252525;
+}
+.newsletter-container {
+  background-color: #252525; /* Verander dit naar de gewenste achtergrondkleur, bijvoorbeeld donkergrijs (#252525) */
+  color: white; /* Tekstkleur */
+  padding: 0px; /* Voeg wat ruimte toe rondom de container */
+}
+
+.contact-address {
+  display: flex;
+  align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-address img {
+  margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-address span {
+  white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+  margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-address span:last-child {
+  margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+  display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
+
+.contact-phone {
+  display: flex;
+  align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-phone img {
+  margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-phone span {
+  white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+  margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-phone span:last-child {
+  margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+  display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
+
+.contact-email {
+  display: flex;
+  align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-email img {
+  margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-email span {
+  white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+  margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-email span:last-child {
+  margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+  display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
+
+.contact-hours {
+  display: flex;
+  align-items: center; /* Verticaal centreren van de tekst */
+}
+
+.contact-hours img {
+  margin-right: 10px; /* Ruimte tussen het plaatje en de tekst */
+}
+
+.contact-hours span {
+  white-space: nowrap; /* Voorkom dat tekst naar de volgende regel gaat */
+  margin-left: 10px; /* Ruimte tussen de tekst en het plaatje */
+}
+
+.contact-hours span:last-child {
+  margin-left: 0; /* Verwijder de linker marge van het laatste span-element */
+  display: block; /* Plaats het laatste span-element op een nieuwe regel */
+}
