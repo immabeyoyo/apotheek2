@@ -7,44 +7,210 @@
   <meta name="Description" content="Dit is een website over de plaatselijke apotheek.">
   <link rel="stylesheet" href="home.css">
   <title>Apotheek</title>
-  <link rel="icon" type="image/x-icon" href="Logo.png">
+  <link rel="icon" type="image/x-icon" href="HomeFotos/Logo.png">
+  <script src="home.js"></script>
 </head>
 <body>
   <!-- Include the navigation bar -->
   <header>
     <nav>
       <div class="logo">
-          <img src="Fotos Homepage/Logo apotheek.png" alt="Logo">
+          <img src="HomeFotos/Logo.png" alt="Logo">
       </div>
 
       <div class="nav-item">
-          <a href="#cvcv">Herhaalservice</a>
+          <a href="#Herhaalservice">Herhaalservice</a>
       </div>
 
       <div class="nav-item">
-          <a href="#sollicitatiebrief">Medicijnoverzicht</a>
+          <a href="#Medicijnoverzicht ">Medicijnoverzicht</a>
       </div>
 
       <div class="nav-item">
-          <a href="#Home">Voorlichting</a>
+          <a href="voorlichting.html">Voorlichting</a>
       </div>
 
       <div class="separator"></div>
 
       <div class="right-buttons">
-          <a href="#login" class="login-button">Mijn APO</a>
-          <a href="#signup" class="signup-button">Aanmelden</a>
+          <a href="#Mijn apo" class="login-button">Mijn APO</a>
+          <a href="#Aanmelden" class="signup-button">Aanmelden</a>
       </div>
     </nav>
   </header>
 
-  <ul class="slideshow">
-    <li><span></span></li>
-    <li><span></span></li>
-    <li><span></span></li>
-    <li><span></span></li>
-    <li><span></span></li>
-  </ul>
+  <!--image slider start-->
+  <div class="slider">
+    <div class="slides">
+      <!--radio buttons start-->
+      <input type="radio" name="radio-btn" id="radio1">
+      <input type="radio" name="radio-btn" id="radio2">
+      <input type="radio" name="radio-btn" id="radio3">
+      <input type="radio" name="radio-btn" id="radio4">
+      <!--radio buttons end-->
+      <!--slide images start-->
+      <div class="slide first">
+        <img src="HomeFotos/Stads foto (1).jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="HomeFotos/Apotheek.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="HomeFotos/Apotheek 2 (1).jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="HomeFotos/medicatie.jpg" alt="">
+      </div>
+      <!--slide images end-->
+    </div>
 
+    <!--automatic navigation start-->
+    <div class="navigation-auto">
+      <!-- Define automatic navigation buttons here -->
+    </div>
+    <!--automatic navigation end-->
+  </div>
+  <!--image slider end-->
+
+ 
+    <div class="contact">
+        <!-- Contact Content -->
+    </div>
+    <div class="newsletter-container">
+        <!-- Newsletter Content -->
+    </div>
+
+  <script type="text/javascript">
+    var counter = 1;
+    setInterval(function(){
+      document.getElementById('radio' + counter).checked = true;
+      counter++;
+      if(counter > 4){
+        counter = 1;
+      }
+    }, 5000);
+
+  </script>
+
+
+
+
+<div class="news-slider">
+  <div class="news-slides">
+    <div class="news-container">
+      <!-- Linker div voor de eerste twee artikelen -->
+      <div class="news-content" style="width: 50%;">
+        <!-- Eerste nieuwsbericht -->
+        <div class="news-slide">
+          <p>04 DECEMBER 2023</p>
+          <h1>Vergoeding zorg door de apotheker in 2024</h1>
+          <p>De zorgverzekeraars hebben de zorgpolissen voor 2024 bekendgemaakt. Het is belangrijk dat u deze zorgpolissen goed bekijkt. Dan kunt u de zorgpolis zo goed mogelijk laten aansluiten bij uw persoonlijke situatie. U kunt tot en met 31 december 2023 uw huidige zorgverzekering opzeggen. En tot en met 31 januari 2024 is het mogelijk een nieuwe zorgverzekering af te sluiten.</p>
+        </div>
+        
+        <!-- Derde nieuwsbericht -->
+        <div class="news-slide">
+          <p>11 MAART 2024</p>
+          <h1>CBG: ‘Kruidenmiddelen gaan niet altijd samen met medicijnen’</h1>
+          <p>'Kruidenmiddelen gaan niet altijd samen met medicijnen.' Dat is de boodschap van een nieuwe campagne van het College ter Beoordeling van Geneesmiddelen (CBG). Bijna een derde van de Nederlanders heeft afgelopen jaar kruidenmiddelen gebruikt. 81% gebruikt deze kruidenmiddelen in combinatie met medicijnen, blijkt uit onderzoek van Kantar (2023). Het doel van de campagne 'Weet wat je slikt' is om mensen bewust te maken dat medicijnen en kruidenmiddelen niet altijd goed samengaan.</p>
+        </div>
+      </div>
+      
+      <div class="images-aside" style="width: 50%;">
+        <!-- Eerste afbeelding en kop -->
+        <div class="news-content">
+          <div class="news-image">
+            <img src="HomeFotos/Medical van (1).png">
+            <p>Aanvragen en bestellen</p>
+            <p>Inschrijven, herhaalmedicatie of een medicatieoverzicht aanvragen? Dat regel je snel en eenvoudig hieronder.</p>
+          </div>
+        </div>
+      
+        <!-- Tweede afbeelding en kop -->
+        <div class="news-content">
+          <div class="news-image">
+            <img src="HomeFotos/Phone (1).png">
+            <p>Aanvragen en bestellen</p>
+            <p>Inschrijven, herhaalmedicatie of een medicatieoverzicht aanvragen? Dat regel je snel en eenvoudig hieronder.</p>
+          </div>
+        </div>
+      
+        <!-- Derde afbeelding en kop -->
+        <div class="news-content">
+          <div class="news-image">
+            <img src="HomeFotos/Service point  (1).png">
+            <p>Aanvragen en bestellen</p>
+            <p>Inschrijven, herhaalmedicatie of een medicatieoverzicht aanvragen? Dat regel je snel en eenvoudig hieronder.</p>
+          </div> 
+        </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="contact">
+      <h2 class="contact-heading">CONTACT</h2>
+      <address>
+          <p class="contact-address">
+              <img src="HomeFotos/Marker Icon2.jpg" height="38" width="39">
+              <span>Hofstraat 13<br>Schagen</span>
+          </p>
+          <p class="contact-phone">
+              <img src="HomeFotos/Telephone Icon.jpg" height="38" width="39">
+              <span>Telefoon:<br>0031 (0) 3 41 23 03 60 </span>
+          </p>
+          <p class="contact-email">
+              <img src="HomeFotos/Mail Icon.jpg" height="38" width="39">
+              <span>Mail ons op:<br>Schutapotheker@gmail.com</span>
+          </p>
+          <p class="contact-hours">
+              <img src="HomeFotos/Marker Icon.jpg" height="38" width="39">
+              <span>Ma t/m vrij 8 - 17 uur<br> Za 9 - 16 uur</span>
+          </p>
+      </address>
+  </div>
+
+
+  <div class="google-map">
+    <!-- Google Maps Embed -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.7498620249646!2d4.789842714399079!3d52.790848724594425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c7d05d0c4cbe15%3A0x1e5874796de42b84!2sHofstraat%2013%2C%201747%20EV%20Schagen%2C%20Netherlands!5e0!3m2!1sen!2suk!4v1648058298305!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+  <div class="menu">
+    <h2>MENU</h2> <br></br>
+    <ul>
+        <li><a href="home.html">Home</a></li> <br></br>
+        <li><a href="herhaalservice.html">Herhaalservice</a></li> <br></br>
+        <li><a href="medicijnoverzicht.html">Medicijnoverzicht</a></li> <br></br>
+        <li><a href="voorlichting.html">Voorlichting</a></li> <br></br>
+        <li><a href="privacy_en_cookies.html">Privacy en Cookies</a></li> <br></br>
+        <li><a href="algemene_voorwaarden.html">Algemene voorwaarden</a></li> <br></br>
+    </ul>
+</div>
+
+
+
+  <div class="newsletter-container">
+      <h2>NIEUWSBRIEF</h2><br><br>
+      <div class="search-bar">
+          <input type="text" placeholder="Email @example.com" id="search-input">
+          <button onclick="stuurEmail()">Verstuur</button>
+      </div>
+      <div class="follow-container">
+          <h2>VOLG ONS!</h2>
+      </div>
+
+
+      <div>
+        <img src="HomeFotos/1298747_instagram_brand_logo_social media_icon.png">
+        <img src="HomeFotos/3225183_app_logo_media_popular_social_icon.png">
+        <img src="HomeFotos/5296499_fb_facebook_facebook logo_icon.png">
+
+      </div>
+  </div>
+</footer>
 </body>
 </html>
